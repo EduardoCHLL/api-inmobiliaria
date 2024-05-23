@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.LocationApplication=void 0;class LocationApplication{constructor(o){this.LocationOperation=o}list(){return this.LocationOperation.list()}}exports.LocationApplication=LocationApplication;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.locationController=void 0;class locationController{constructor(t){this.application=t,this.list=this.list.bind(this)}async list(t,o){const i=await this.application.list();o.json(i)}}exports.locationController=locationController;
