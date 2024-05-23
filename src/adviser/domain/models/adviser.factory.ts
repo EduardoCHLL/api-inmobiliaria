@@ -1,10 +1,10 @@
+import { CompanyEntity} from '../../../company/domain/models/company.entity'
 import { AdviserModel } from "./adviser.model";
-
 export interface IAdviser {
   adviser: number,
   name: string,
   lastname: string,
-  company: number,
+  company: CompanyEntity,
   email: string,
   phone_number: string,
   active: boolean

@@ -1,6 +1,6 @@
  
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { CompanyEntity} from '../../../company/domain/models/company.entity'
 @Entity({ name: "adviser" })
 export class AdviserEntity {
   @PrimaryGeneratedColumn()
@@ -12,8 +12,10 @@ export class AdviserEntity {
   @Column({ type: "varchar", length: 50 })
   lastname: string;
 
-  @Column({ type: "numeric"})
-  company: number;
+ 
+
+  @ManyToOne((type) => CompanyEntity, (Company) => Company.id)
+  company: CompanyEntity;
 
 
   @Column({ type: "varchar", length: 50 })
