@@ -1,6 +1,8 @@
 import express, { Application, Request, Response } from "express";
 import routesDriver from "./drivers/interfaces/drivers.route";
 import routesLocation from "./location/interfaces/location.route";
+import routesAdviser from "./adviser/interfaces/adviser.route";
+
 
 
 class App {
@@ -16,7 +18,7 @@ class App {
     mountRoutes(): void {
       this.expressApp.use("/Driver", new routesDriver().expressRouter);
       this.expressApp.use("/location", new routesLocation().expressRouter);
-
+      this.expressApp.use("/adviser", new routesAdviser().expressRouter);
  
     }
   
