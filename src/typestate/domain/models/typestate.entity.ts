@@ -1,5 +1,5 @@
  
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: "typestate" })
 export class TypeStateEntity {
