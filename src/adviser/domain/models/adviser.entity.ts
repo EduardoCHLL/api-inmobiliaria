@@ -4,7 +4,7 @@ import { CompanyEntity} from '../../../company/domain/models/company.entity'
 @Entity({ name: "adviser" })
 export class AdviserEntity {
   @PrimaryGeneratedColumn()
-  adviser: number;
+  id: number;
 
   @Column({ type: "varchar", length: 50 })
   name: string;

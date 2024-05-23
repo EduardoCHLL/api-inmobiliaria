@@ -13,7 +13,7 @@ export class LocationEntity {
 
 
   @ManyToOne((type) => TypeLocationEntity, (typelocation) => typelocation.id)
-  type: TypeLocationEntity;
+  typeloc: TypeLocationEntity;
 
   @Column({ type: "varchar", length: 50 })
   name: string;

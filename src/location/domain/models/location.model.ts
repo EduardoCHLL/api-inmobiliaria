@@ -4,7 +4,7 @@ export class LocationModel {
   constructor(
     public id: number ,
     public parent: LocationEntity,
-    public type: TypeLocationEntity,
+    public typeloc: TypeLocationEntity,
     public name: string,
     public url: string,
     public active: boolean,

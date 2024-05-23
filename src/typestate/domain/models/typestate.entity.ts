@@ -1,10 +1,10 @@
  
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ name: "typestate" })
+@Entity({ name: "type_state" })
 export class TypeStateEntity {
   @PrimaryGeneratedColumn()
-  type_id: number;
+  id: number;
 
   @Column({ type: "varchar" })
   name: string;

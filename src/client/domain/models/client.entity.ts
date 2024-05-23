@@ -1,12 +1,10 @@
- 
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity({ name: "client" })
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+@Entity({ name: 'client' })
 export class ClientEntity {
-  @PrimaryGeneratedColumn()
-  clientid: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: 'varchar' })
   name: string;
- 
 }

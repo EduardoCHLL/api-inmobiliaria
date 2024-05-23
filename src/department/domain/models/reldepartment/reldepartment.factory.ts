@@ -3,7 +3,7 @@ import { DepartmentEntity } from "../department/department.entity"
 import { SupplierEntity } from "../../../../supplier/domain/models/supplier.entity"
 import {AdviserEntity} from "../../../../adviser/domain/models/adviser.entity"
 export interface IDepartment {
-  id: number,
+  id: string,
   department : DepartmentEntity,
   adviser_id: AdviserEntity ,
   body: JSON ,
@@ -27,7 +27,7 @@ export class DepartmentFactory {
   
  
 
-    const id = RelDepartment.id || 0;
+    const id = RelDepartment.id ;
     const department = RelDepartment.department;
     const adviser_id = RelDepartment.adviser_id;
     const body = RelDepartment.body;

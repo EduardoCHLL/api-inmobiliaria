@@ -4,7 +4,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity({ name: "supplier" })
 export class SupplierEntity {
   @PrimaryGeneratedColumn()
-  supplier_id: number;
+  id: number;
 
   @Column({ type: "varchar" })
   name: string;

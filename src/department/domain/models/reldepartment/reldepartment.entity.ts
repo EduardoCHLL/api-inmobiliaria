@@ -8,14 +8,14 @@ import {AdviserEntity} from "../../../../adviser/domain/models/adviser.entity"
 
 @Entity({ name: "rel_department" })
 export class RelDepartmentEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
   
   @ManyToOne((type) => DepartmentEntity, (department) => department.id)
   department: DepartmentEntity;
  
-  @ManyToOne((type) => AdviserEntity, (adviser) => adviser.adviser)
-  adviser_id: AdviserEntity;
+  @ManyToOne((type) => AdviserEntity, (adviser) => adviser.id)
+  adviser: AdviserEntity;
 
 
   @Column({ type: "json" })
@@ -50,15 +50,15 @@ export class RelDepartmentEntity {
   garage: string;
 
 
-  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.supplier_id)
+  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.id)
   gas_service: SupplierEntity;
 
 
-  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.supplier_id)
+  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.id)
   drainage_service: SupplierEntity;
 
 
-  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.supplier_id)
+  @ManyToOne((type) => SupplierEntity, (supplier) => supplier.id)
   water_service: SupplierEntity;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

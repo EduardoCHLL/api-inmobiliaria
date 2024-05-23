@@ -1,7 +1,7 @@
 import { CompanyEntity} from '../../../company/domain/models/company.entity'
 import { AdviserModel } from "./adviser.model";
 export interface IAdviser {
-  adviser: number,
+  id: number,
   name: string,
   lastname: string,
   company: CompanyEntity,
@@ -12,7 +12,7 @@ export interface IAdviser {
 
 export class AdviserFactory {
   create(adviser: Partial<IAdviser>) {
-    const adviserid = adviser.adviser;
+    const id = adviser.id;
     const name = adviser.name;
     const lastname = adviser.lastname;
     const company = adviser.company;
@@ -22,7 +22,7 @@ export class AdviserFactory {
  
 
     return new AdviserModel(
-      adviserid
+      id
       ,name
       ,lastname
       ,company

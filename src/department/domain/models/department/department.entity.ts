@@ -9,8 +9,9 @@ import { CompanyEntity } from '../../../../company/domain/models/company.entity'
 
 @Entity({ name: "department" })
 export class DepartmentEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
 
  
   @ManyToOne((type) => LocationEntity, (location) => location.id)
@@ -18,23 +19,23 @@ export class DepartmentEntity {
 
 
 
-  @ManyToOne((type) => ClientEntity, (client) => client.clientid)
+  @ManyToOne((type) => ClientEntity, (client) => client.id)
   owner: ClientEntity;
 
 
   
 
 
-  @ManyToOne((type) => ClientEntity, (client) => client.clientid)
+  @ManyToOne((type) => ClientEntity, (client) => client.id)
   previous_owner: ClientEntity;
 
   @ManyToOne((type) => CompanyEntity, (company) => company.id)
-  company_id: CompanyEntity;
+  company: CompanyEntity;
  
   
  
-  @ManyToOne((type) => TypeStateEntity, (typestate) => typestate.type_id)
-  type_real_estate: LocationEntity;
+  @ManyToOne((type) => TypeStateEntity, (typestate) => typestate.id)
+  ty_re_state: LocationEntity;
 
  
 

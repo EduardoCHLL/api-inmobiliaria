@@ -5,7 +5,7 @@ import {AdviserEntity} from "../../../../adviser/domain/models/adviser.entity"
 export class RelDepartmentModel {
   constructor(
    
-    public id: number,
+    public id: string,
     public department: DepartmentEntity,
     public adviser_id: AdviserEntity ,
     public body: JSON ,

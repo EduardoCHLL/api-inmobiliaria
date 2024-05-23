@@ -9,6 +9,6 @@ export class TypeLocationEntity {
   @Column({ type: "varchar" })
   type_description: string;
 
-  @OneToMany((type) => LocationEntity, (location) => location.type)
+  @OneToMany((type) => LocationEntity, (location) => location.typeloc)
   location: LocationEntity[];
 }

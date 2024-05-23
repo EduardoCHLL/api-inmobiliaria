@@ -8,7 +8,7 @@ export interface ILocation {
 
   id: number;
   parent: LocationEntity;
-  type: TypeLocationEntity;
+  typeloc: TypeLocationEntity;
   name: string;
   url: string;
   active : boolean;
@@ -20,7 +20,7 @@ export class LocationFactory {
 
     const id = location.id||0;
     const parent = location.parent;
-    const type = location.type;
+    const typeloc = location.typeloc;
     const name = location.name;
     const url = location.url;
     const active = location.active||true;
@@ -31,7 +31,7 @@ export class LocationFactory {
     return new LocationModel(
       id,
       parent,
-      type,
+      typeloc,
       name,
       url,
       active
