@@ -1,0 +1,2 @@
+INSERT INTO remax.currency_conversion (id, "operator", "changeValue", "currencyOriginId", "currencyChangeId") VALUES(1, '/', 3.45, 'PER', 'USD');
+INSERT INTO remax.currency_conversion (id, "operator", "changeValue", "currencyOriginId", "currencyChangeId") VALUES(2, '*', 2.29, 'USD', 'PER');

@@ -2,7 +2,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, Double, ManyToOne} from "typeorm";
 import { DepartmentEntity } from "../department/department.entity"
 import { SupplierEntity } from "../../../../supplier/domain/models/supplier.entity"
-import {AdviserEntity} from "../../../../adviser/domain/models/adviser.entity"
+import { AdviserEntity } from "../../../../adviser/domain/models/adviser.entity"
+import {TypeCurrencyEntity} from "../../../../currency/type_currency/models/type_currency.entity"
+
 
 
 
@@ -21,11 +23,13 @@ export class RelDepartmentEntity {
   @Column({ type: "json" })
   body: JSON;
 
-  @Column({ type: "double" })
+  @Column({ type: "decimal" })
   price: Double;
 
-  @Column({ type: "varchar" })
-  current_currency: string;
+
+  
+  @ManyToOne((type) => TypeCurrencyEntity, (currency) => currency.id)
+  current_currency: TypeCurrencyEntity;
 
 
   @Column({ type: "varchar" })

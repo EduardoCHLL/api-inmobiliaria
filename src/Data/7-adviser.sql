@@ -1,0 +1,2 @@
+INSERT INTO remax.adviser (id, "name", lastname, email, phone_number, active, "companyId") VALUES(1, 'Paola ', 'Bohorquez Astocondor', 'paola@gmail.com', '955874596', true, 'c200358c-3151-49a4-86db-8a0aad758b58'::uuid);
+INSERT INTO remax.adviser (id, "name", lastname, email, phone_number, active, "companyId") VALUES(2, 'Alexis Arduino', 'Castillo Ticona', 'Alexis@gmail.com', '955874596', true, 'c200358c-3151-49a4-86db-8a0aad758b58'::uuid);

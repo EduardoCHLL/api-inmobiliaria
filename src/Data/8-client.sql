@@ -1,0 +1,3 @@
+INSERT INTO remax.client (id, "name", lastname, email, "phoneNumber", birthdate, active) VALUES('5201e228-9092-4a4f-8fc2-be7c11ea7242'::uuid, 'Misael ', 'Abanto', 'misael@gmail.com', '955648751', '20/16/1996', true);
+INSERT INTO remax.client (id, "name", lastname, email, "phoneNumber", birthdate, active) VALUES('fad5a3c5-e3eb-429c-88a2-ae3cee92d66b'::uuid, 'Mishel', 'Lopez Arias', 'Mishel@gmail.com', '955648722', '20/16/1996', true);
+INSERT INTO remax.client (id, "name", lastname, email, "phoneNumber", birthdate, active) VALUES('85a370fa-482a-4bb4-b1cc-d8d07449e5b0'::uuid, 'Uilses', 'Torrico San', 'Uilses@gmail.com', '955648733', '20/16/1996', true);
