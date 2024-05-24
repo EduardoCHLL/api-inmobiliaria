@@ -12,17 +12,27 @@ export class DepartmentInfrastructure
   implements DepartmentRepository
 {
   constructor() {
+    
     super(DepartmentEntity, "DepartmentInfrastructure");
   }
 
-  async getAll(where: object = {}): Promise<Result<DepartmentModel>> {
+  async getAll(
+    where: object = {},
+    relations: string[] = [],
+    order: object = {}
+  ): Promise<Result<DepartmentEntity>> {
+    
     const dataSource = DatabaseBootstrap.dataSource;
-    const repository: Repository<DepartmentModel> =
-      dataSource.getRepository(DepartmentEntity);
-
-    const data: DepartmentModel[] = await repository.find({ where });
-
-    return ResponseDto(  data);
+    const repository: Repository<DepartmentEntity> = dataSource.getRepository(DepartmentEntity);
+    const _where = Object.assign(where, { active: true });
+    console.log(_where,relations,order)
+    const data: DepartmentEntity[] = await repository.find({
+      where: _where,
+      relations,
+      order,
+    });
+    console.log(data)
+    return ResponseDto<DepartmentEntity>(  data);
   }
 
   reportByDepartment(id: number): Promise<DepartmentModel[]> {

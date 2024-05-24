@@ -1,7 +1,7 @@
 import { DepartmentModel } from "../domain/models/department/department.model";
 import { DepartmentRepository } from "../domain/repositories/department.repository";
 import { BaseApplication } from "../../shared/application/interfaces/base-application";
-import { DepartmentDTO } from "./dtos/dto";
+import { DepartmentDTO } from "./dtos/department/dto";
 
 export class DepartmentApplication extends BaseApplication<DepartmentModel> {
   constructor(private repositoryDepartment: DepartmentRepository) {

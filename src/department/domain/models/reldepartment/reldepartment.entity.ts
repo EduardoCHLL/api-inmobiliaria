@@ -1,5 +1,5 @@
 
-import { Entity, PrimaryGeneratedColumn, Column, Double, ManyToOne} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, Double,OneToOne, ManyToOne} from "typeorm";
 import { DepartmentEntity } from "../department/department.entity"
 import { SupplierEntity } from "../../../../supplier/domain/models/supplier.entity"
 import { AdviserEntity } from "../../../../adviser/domain/models/adviser.entity"
@@ -13,9 +13,12 @@ export class RelDepartmentEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   
-  @ManyToOne((type) => DepartmentEntity, (department) => department.id)
-  department: DepartmentEntity;
  
+ 
+  @OneToOne(() => DepartmentEntity, (department) => department.relDepartment)
+  department: DepartmentEntity;
+
+
   @ManyToOne((type) => AdviserEntity, (adviser) => adviser.id)
   adviser: AdviserEntity;
 

@@ -1,6 +1,6 @@
-import { DepartmentApplication } from "../application/department.application";
+import { DepartmentApplication } from "../../application/department.application";
 import { Response, Request } from "express";
-import { DepartmentFactory } from "../domain/models/department/department.factory";
+import { DepartmentFactory } from "../../domain/models/department/department.factory";
  
  
 
@@ -16,10 +16,12 @@ export class DepartmentController {
   async list(req: Request, res: Response) {
     
     const departments = await this.application.findAll(
-      {  },
-      [],
+      {},
+      ['loc_id','owner','previous_owner','company','ty_re_state','relDepartment'],
       {}
     );
+
+    
     res.json(departments);
   }
 

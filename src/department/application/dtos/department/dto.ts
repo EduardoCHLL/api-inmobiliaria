@@ -1,6 +1,6 @@
-import { DepartmentModel } from "../../domain/models/department/department.model";
-import Result from "../../../shared/application/interfaces/result.interface";
-import { DTOAbstract } from "../../../shared/application/interfaces/dtos/abstract.dto";
+import { DepartmentModel } from "../../../domain/models/department/department.model";
+import Result from "../../../../shared/application/interfaces/result.interface";
+import { DTOAbstract } from "../../../../shared/application/interfaces/dtos/abstract.dto";
 
 const FilterFieldActiveInDepartment = (department: DepartmentModel) => {
   const obj = Object.assign({}, department);

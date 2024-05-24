@@ -1,12 +1,17 @@
 import { DepartmentModel } from "./department.model";
-import {ClientEntity} from '../../../../client/domain/models/client.entity'
+import { ClientEntity } from '../../../../client/domain/models/client.entity'
+import { LocationEntity } from '../../../../location/domain/models/location.entity'
+import { TypeStateEntity } from '../../../../typestate/domain/models/typestate.entity'
+import { CompanyEntity } from '../../../../company/domain/models/company.entity'
+ 
+
 export interface IDepartment {
-  departmentId : string , 
-  loc_id : number , 
+  id : string , 
+  loc_id : LocationEntity , 
   owner : ClientEntity , 
-  previous_owner : number , 
-  company : number , 
-  ty_re_state : number , 
+  previous_owner : ClientEntity , 
+  company : CompanyEntity , 
+  ty_re_state : TypeStateEntity , 
   datetime_insertion : Date , 
   datetime_update : Date , 
   active : boolean , 
@@ -15,8 +20,8 @@ export interface IDepartment {
 export class DepartmentFactory {
   create(department: Partial<IDepartment>) {
    
-    const departmentId = department.departmentId;
-    const loc_id = department.loc_id||0;
+    const id = department.id;
+    const loc_id = department.loc_id;
     const owner = department.owner;
     const previous_owner = department.previous_owner;
     const company = department.company;
@@ -28,7 +33,7 @@ export class DepartmentFactory {
  
 
     return new DepartmentModel(
-      departmentId
+      id
       ,loc_id
       ,owner
       ,previous_owner

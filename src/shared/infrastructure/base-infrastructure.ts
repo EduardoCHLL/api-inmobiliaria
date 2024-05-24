@@ -62,15 +62,12 @@ export abstract class BaseInfrastructure<T> {
     
     const dataSource = DatabaseBootstrap.dataSource;
     const repository: Repository<T> = dataSource.getRepository(this.entity);
-
     const _where = Object.assign(where, { active: true });
-
     const data: T[] = await repository.find({
       where: _where,
       relations,
       order,
     });
-
     return ResponseDto<T>(  data);
   }
 

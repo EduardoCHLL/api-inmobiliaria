@@ -21,7 +21,7 @@ export interface IDepartment {
   active: boolean ,
 }
 
-export class DepartmentFactory {
+export class RelDepartmentFactory {
   create(RelDepartment: Partial<IDepartment>) {
    
   

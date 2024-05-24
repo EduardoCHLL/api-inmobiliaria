@@ -2,6 +2,10 @@ import express, { Application, Request, Response } from "express";
 import routesDriver from "./drivers/interfaces/drivers.route";
 import routesLocation from "./location/interfaces/location.route";
 import routesAdviser from "./adviser/interfaces/adviser.route";
+import routesDepartment from "./department/interfaces/department/department.route";
+import routesRelDepartment from "./department/interfaces/reldepartment/reldepartment.route";
+
+ 
 
 
 
@@ -19,7 +23,8 @@ class App {
       this.expressApp.use("/Driver", new routesDriver().expressRouter);
       this.expressApp.use("/location", new routesLocation().expressRouter);
       this.expressApp.use("/adviser", new routesAdviser().expressRouter);
- 
+      this.expressApp.use("/department", new routesDepartment().expressRouter);
+      this.expressApp.use("/reldepartment", new routesRelDepartment().expressRouter);
     }
   
     mountMiddlewares(): void {

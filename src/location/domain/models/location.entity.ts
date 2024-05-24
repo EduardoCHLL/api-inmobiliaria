@@ -1,7 +1,10 @@
  
 import { TypeLocationEntity } from "../../../typelocation/domain/models/typelocation.entity";
 
-import { Entity, PrimaryGeneratedColumn, Column,   ManyToOne } from "typeorm";
+
+import {  DepartmentEntity} from "../../../department/domain/models/department/department.entity";
+
+import { Entity, PrimaryGeneratedColumn, Column,   ManyToOne,OneToMany } from "typeorm";
 @Entity({ name: "location" })
 export class LocationEntity {
   @PrimaryGeneratedColumn()
@@ -24,6 +27,7 @@ export class LocationEntity {
   @Column({ type: "boolean" })
   active: boolean;
 
-
+  @OneToMany((type) => DepartmentEntity, (department) => department.loc_id)
+  departmentes: DepartmentEntity[];
   
 }
